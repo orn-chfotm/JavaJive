@@ -1,7 +1,6 @@
-package com.toy.javajive.repository;
+package com.toy.springRestApi.repository;
 
-import com.toy.javajive.entity.MemberEntity;
-import org.junit.jupiter.api.Assertions;
+import com.toy.springRestApi.entity.MemberEntity;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
