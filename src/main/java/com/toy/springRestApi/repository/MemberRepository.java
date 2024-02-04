@@ -1,6 +1,6 @@
-package com.toy.javajive.repository;
+package com.toy.springRestApi.repository;
 
-import com.toy.javajive.entity.MemberEntity;
+import com.toy.springRestApi.entity.MemberEntity;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

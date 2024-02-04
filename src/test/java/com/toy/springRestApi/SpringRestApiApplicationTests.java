@@ -1,10 +1,10 @@
-package com.toy.javajive;
+package com.toy.springRestApi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class JavaJiveApplicationTests {
+class SpringRestApiApplicationTests {
 
     @Test
     void contextLoads() {

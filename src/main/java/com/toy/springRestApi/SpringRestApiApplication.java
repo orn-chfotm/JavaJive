@@ -1,13 +1,13 @@
-package com.toy.javajive;
+package com.toy.springRestApi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class JavaJiveApplication {
+public class SpringRestApiApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(JavaJiveApplication.class, args);
+        SpringApplication.run(SpringRestApiApplication.class, args);
     }
 
 }

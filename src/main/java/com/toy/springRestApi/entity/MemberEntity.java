@@ -1,4 +1,4 @@
-package com.toy.javajive.entity;
+package com.toy.springRestApi.entity;
 
 import lombok.Getter;
 import lombok.Setter;
