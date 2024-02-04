@@ -1,4 +1,4 @@
-package com.toy.springRestApi;
+package com.rest.springRestApi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
