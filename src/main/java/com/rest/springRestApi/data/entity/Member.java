@@ -1,16 +1,15 @@
-package com.rest.springRestApi.entity;
+package com.rest.springRestApi.data.entity;
 
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import javax.persistence.*;
 
 @Getter
 @NoArgsConstructor
 @Entity
-public class MemberEntity {
+public class Member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +19,7 @@ public class MemberEntity {
     private String name;
 
     @Builder
-    public MemberEntity(Long id, String name) {
+    public Member(Long id, String name) {
         this.id = id;
         this.name = name;
     }
