@@ -1,6 +1,6 @@
 package com.rest.springRestApi.controller;
 
-import com.rest.springRestApi.data.dto.EarthQuakeDto;
+import com.rest.springRestApi.data.dto.response.EarthQuakeResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,8 +21,8 @@ import java.util.List;
 public class EarthquakeApiController {
 
     @GetMapping(value = "/getList")
-    public List<? extends EarthQuakeDto> getList() {
-        List<? extends EarthQuakeDto> list = new ArrayList<>();
+    public List<EarthQuakeResponse> getList() {
+        List<EarthQuakeResponse> list = new ArrayList<>();
 
         return list;
     }
