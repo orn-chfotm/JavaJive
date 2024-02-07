@@ -1,6 +1,6 @@
 package com.rest.springRestApi.service.impl;
 
-import com.rest.springRestApi.data.dto.EarthQuakeDto;
+import com.rest.springRestApi.data.dto.response.EarthQuakeResponse;
 import com.rest.springRestApi.service.EarthquakeApiService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,7 +12,7 @@ import java.util.List;
 public class EarthquakeApiServiceImpl implements EarthquakeApiService {
 
     @Override
-    public List<EarthQuakeDto> getList() {
+    public List<EarthQuakeResponse> getList() {
         return null;
     }
 }
