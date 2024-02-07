@@ -1,5 +1,6 @@
 package com.rest.springRestApi.data.dto.response;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 /**
@@ -14,26 +15,36 @@ import lombok.*;
 @RequiredArgsConstructor
 @EqualsAndHashCode
 @ToString
+@Data
 public class EarthQuakeResponse {
 
     private String arcd;
 
+    @JsonProperty("acmdfclty_sn")
     private String acmdfcltySn;
 
+    @JsonProperty("ctprvn_nm")
     private String ctprvnNm;
 
+    @JsonProperty("sgg_nm")
     private String sggNm;
 
+    @JsonProperty("vt_acmdfclty_nm")
     private String vtAcmdfcltyNm;
 
+    @JsonProperty("rdnmadr_cd")
     private String rdnmadrCd;
 
+    @JsonProperty("bdong_cd")
     private String bdongCd;
 
+    @JsonProperty("hdong_cd")
     private String hdongCd;
 
+    @JsonProperty("dtl_adres")
     private String dtlAdres;
 
+    @JsonProperty("fclty_ar")
     private String fcltyAr;
 
     private String xcord;
