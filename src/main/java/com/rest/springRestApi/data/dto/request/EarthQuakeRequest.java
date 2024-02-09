@@ -15,15 +15,7 @@ import lombok.*;
 @RequiredArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class EarthQuakeRequest {
-
-    private String ServiceKey;
-
-    private String pageNo;
-
-    private String numOfRows;
-
-    private String type;
+public class EarthQuakeRequest extends ApiExplorerRequest {
 
     private String arcd;
 
