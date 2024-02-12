@@ -15,6 +15,8 @@ import lombok.*;
 @Data
 public class ApiExplorerRequest {
 
+    private String reqType;
+
     private String url;
 
     private String ServiceKey;

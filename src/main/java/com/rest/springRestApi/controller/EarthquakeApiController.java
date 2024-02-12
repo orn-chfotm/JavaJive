@@ -28,10 +28,11 @@ public class EarthquakeApiController {
     private final EarthquakeApiService earthquakeApiService;
 
     @GetMapping(value = "/getList")
-    public List<EarthQuakeResponse> getList(EarthQuakeRequest earthQuakeRequest) throws IOException, JSONException {
+    public List<EarthQuakeResponse> getList(EarthQuakeRequest earthQuakeRequest) throws IOException{
         earthQuakeRequest.setPageNo("1");
         earthQuakeRequest.setType("JSON");
         earthQuakeRequest.setNumOfRows("10");
+        earthQuakeRequest.setReqType("GET");
         List<EarthQuakeResponse> list = earthquakeApiService.getList(earthQuakeRequest);
         return list;
     }

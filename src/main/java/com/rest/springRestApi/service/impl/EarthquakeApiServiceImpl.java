@@ -78,7 +78,7 @@ public class EarthquakeApiServiceImpl implements EarthquakeApiService {
     public List<EarthQuakeResponse> getList(EarthQuakeRequest earthQuakeRequest) {
         List<EarthQuakeResponse> list = new ArrayList<>();
         try {
-            ApiExplorerResponse apiExplorerResponse = ApiExplorer.getConntion(this.getBaseURL(earthQuakeRequest), "GET");
+            ApiExplorerResponse apiExplorerResponse = ApiExplorer.getConntion(this.getBaseURL(earthQuakeRequest), earthQuakeRequest.getReqType());
             if(apiExplorerResponse.getResCode() == HttpURLConnection.HTTP_OK) {
                 list = this.getJson(apiExplorerResponse);
             }
