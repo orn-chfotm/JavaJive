@@ -2,6 +2,11 @@ package com.rest.springRestApi.data.dto.request;
 
 import lombok.*;
 
+/**
+ * @ClassName: ApiExplorerRequest
+ * @Description: Api Request DTO 최상위
+ */
+
 @Getter
 @Setter
 @RequiredArgsConstructor
