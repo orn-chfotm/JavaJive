@@ -37,8 +37,10 @@ public class ApiExplorer{
         urlConnection.setReadTimeout(3000);
         urlConnection.setDoInput(true);
 
-        BufferedReader br;
+        log.info("ApiExplorer getConntion URL : " + urlStr);
+        log.info("ApiExplorer getConntion resCode : " + urlConnection.getResponseCode());
 
+        BufferedReader br;
         if(urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
             br = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
         } else {
