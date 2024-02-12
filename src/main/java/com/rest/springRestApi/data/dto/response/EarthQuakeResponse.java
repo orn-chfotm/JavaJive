@@ -16,7 +16,7 @@ import lombok.*;
 @EqualsAndHashCode
 @ToString
 @Data
-public class EarthQuakeResponse {
+public class EarthQuakeResponse extends ApiExplorerResponse{
 
     private String arcd;
 
