@@ -54,7 +54,7 @@ public class ApiExplorer{
         }
 
         ApiExplorerResponse apiExplorerResponse = ApiExplorerResponse.builder()
-                .resCode(urlConnection.getResponseCode())
+                .resultCode(urlConnection.getResponseCode())
                 .resStr(sb.toString())
                 .build();
 
