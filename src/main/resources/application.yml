@@ -42,3 +42,7 @@ api:
     baseURL: 'https://apis.data.go.kr/1741000/EmergencyAssemblyArea_Earthquake3/getArea3List'
     EncodingKey: '%2Bn9ZwKaEA0%2FZzATwHrLLjpzLtJNyZQnIGhoOQYgZQ65rUGySka3qW95tM9lhzAaCszxEOaphTYE9DSF%2FNNFgaQ%3D%3D'
     DecodingKey: '+n9ZwKaEA0/ZzATwHrLLjpzLtJNyZQnIGhoOQYgZQ65rUGySka3qW95tM9lhzAaCszxEOaphTYE9DSF/NNFgaQ=='
+  Tsunami:
+    baseURL: 'https://apis.data.go.kr/1741000/TsunamiShelter3/getTsunamiShelter1List'
+    EncodingKey: '%2Bn9ZwKaEA0%2FZzATwHrLLjpzLtJNyZQnIGhoOQYgZQ65rUGySka3qW95tM9lhzAaCszxEOaphTYE9DSF%2FNNFgaQ%3D%3D'
+    DecodingKey: '+n9ZwKaEA0/ZzATwHrLLjpzLtJNyZQnIGhoOQYgZQ65rUGySka3qW95tM9lhzAaCszxEOaphTYE9DSF/NNFgaQ=='
