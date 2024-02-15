@@ -1,5 +1,6 @@
 package com.rest.springRestApi.service.impl;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rest.springRestApi.data.dto.request.ApiExplorerRequest;
 import com.rest.springRestApi.data.dto.request.TsunamiRequest;
 import com.rest.springRestApi.data.dto.response.ApiExplorerResponse;
@@ -35,17 +36,25 @@ public class TsunamiApiServiceImpl implements TsunamiApiService {
 
     @Override
     public <T extends ApiExplorerRequest> String getBaseURL(T apiExplorerRequest) throws UnsupportedEncodingException {
-        StringBuilder urlBuilder = new StringBuilder(baseURL);
-        urlBuilder.append("?").append(URLEncoder.encode("ServiceKey", UNC))
-                .append("=").append(serviceKey);
-        urlBuilder.append("&").append(URLEncoder.encode("pageNo", UNC))
-                .append("=").append(URLEncoder.encode(apiExplorerRequest.getPageNo(), UNC));
-        urlBuilder.append("&").append(URLEncoder.encode("numOfRows", UNC))
-                .append("=").append(URLEncoder.encode(apiExplorerRequest.getNumOfRows(), UNC));
-        urlBuilder.append("&").append(URLEncoder.encode("type", UNC))
-                .append("=").append(URLEncoder.encode(apiExplorerRequest.getType(), UNC));
+        StringBuffer urlBuffer = new StringBuffer(baseURL);
+        urlBuffer.append("?")
+                .append(URLEncoder.encode("ServiceKey", UNC))
+                .append("=")
+                .append(serviceKey);
+        urlBuffer.append("&")
+                .append(URLEncoder.encode("pageNo", UNC))
+                .append("=")
+                .append(URLEncoder.encode(apiExplorerRequest.getPageNo(), UNC));
+        urlBuffer.append("&")
+                .append(URLEncoder.encode("numOfRows", UNC))
+                .append("=")
+                .append(URLEncoder.encode(apiExplorerRequest.getNumOfRows(), UNC));
+        urlBuffer.append("&")
+                .append(URLEncoder.encode("type", UNC))
+                .append("=")
+                .append(URLEncoder.encode(apiExplorerRequest.getType(), UNC));
 
-        return urlBuilder.toString();
+        return urlBuffer.toString();
     }
 
     @Override
