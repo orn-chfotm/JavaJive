@@ -49,8 +49,8 @@ public class EarthquakeApiServiceImpl implements EarthquakeApiService {
                 .append(serviceKey);
         urlBuffer.append("&")
                 .append(URLEncoder.encode("pageNo", UNC))
-                .append("=")
-                .append(URLEncoder.encode(apiExplorerRequest.getPageNo(), UNC));
+                .append("=").
+                append(URLEncoder.encode(apiExplorerRequest.getPageNo(), UNC));
         urlBuffer.append("&")
                 .append(URLEncoder.encode("numOfRows", UNC))
                 .append("=")
