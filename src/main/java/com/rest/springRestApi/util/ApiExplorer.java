@@ -2,6 +2,8 @@ package com.rest.springRestApi.util;
 
 import com.rest.springRestApi.data.dto.response.ApiExplorerResponse;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
+import org.springframework.web.client.RestTemplate;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,6 +22,8 @@ import java.net.URL;
 
 @Log4j2
 public class ApiExplorer{
+
+    private static RestTemplate restTemplate;
 
     /**
      * URL Connection Common
@@ -60,6 +64,27 @@ public class ApiExplorer{
 
         br.close();
         urlConnection.disconnect();
+
+        return apiExplorerResponse;
+    }
+
+    /**
+     * URL Connection Common RestTemplate
+     *
+     * @param urlStr connection base URL
+     * @param method connection Method(GET, POST)
+     */
+    public static ApiExplorerResponse getConntionRestTemple(String urlStr, String method) throws IOException {
+
+        HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();
+        factory.setConnectTimeout(3000);
+        factory.setReadTimeout(3000);
+
+        ApiExplorerResponse apiExplorerResponse = ApiExplorerResponse.builder()
+                .resultCode(null)
+                .resStr(null)
+                .build();
+
 
         return apiExplorerResponse;
     }
