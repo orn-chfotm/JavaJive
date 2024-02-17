@@ -72,6 +72,8 @@ public class ApiExplorer{
     /**
      * URL Connection Common RestTemplate
      *
+     * @param urlStr connection base URL
+     * @param method connection Method
      */
     public static ApiExplorerResponse getConntionRestTemple(String urlStr, HttpMethod method) throws IOException {
 
