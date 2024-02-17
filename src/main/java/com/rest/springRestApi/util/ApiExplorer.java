@@ -2,7 +2,8 @@ package com.rest.springRestApi.util;
 
 import com.rest.springRestApi.data.dto.response.ApiExplorerResponse;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
+import org.springframework.http.*;
+import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.BufferedReader;
@@ -71,20 +72,26 @@ public class ApiExplorer{
     /**
      * URL Connection Common RestTemplate
      *
-     * @param urlStr connection base URL
-     * @param method connection Method(GET, POST)
      */
-    public static ApiExplorerResponse getConntionRestTemple(String urlStr, String method) throws IOException {
+    public static ApiExplorerResponse getConntionRestTemple(String urlStr, HttpMethod method) throws IOException {
 
-        HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();
-        factory.setConnectTimeout(3000);
-        factory.setReadTimeout(3000);
+        SimpleClientHttpRequestFactory factory = new SimpleClientHttpRequestFactory();
+        factory.setConnectTimeout(20000);
+        factory.setReadTimeout(20000);
+
+        RestTemplate restTemplate = new RestTemplate(factory);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        HttpEntity<String> entity = new HttpEntity<>(headers);
+
+        ResponseEntity response = restTemplate.exchange(urlStr, method, entity, String.class);
 
         ApiExplorerResponse apiExplorerResponse = ApiExplorerResponse.builder()
-                .resultCode(null)
-                .resStr(null)
+                .resultCode(response.getStatusCodeValue())
+                .resStr((String) response.getBody())
                 .build();
-
 
         return apiExplorerResponse;
     }
