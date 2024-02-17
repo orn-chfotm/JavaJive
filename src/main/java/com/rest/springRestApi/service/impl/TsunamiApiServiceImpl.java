@@ -1,6 +1,5 @@
 package com.rest.springRestApi.service.impl;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rest.springRestApi.data.dto.request.ApiExplorerRequest;
 import com.rest.springRestApi.data.dto.request.TsunamiRequest;
 import com.rest.springRestApi.data.dto.response.ApiExplorerResponse;
@@ -13,6 +12,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -78,7 +78,7 @@ public class TsunamiApiServiceImpl implements TsunamiApiService {
         List<TsunamiResponse> resList = new ArrayList<>();
 
         try {
-            ApiExplorerResponse apiExplorerResponse = ApiExplorer.getConntion(this.getBaseURL(tsunamiRequest), tsunamiRequest.getReqType());
+            ApiExplorerResponse apiExplorerResponse = ApiExplorer.getConntionRestTemple(this.getBaseURL(tsunamiRequest), HttpMethod.GET);
             if(apiExplorerResponse.getResultCode() == HttpURLConnection.HTTP_OK) {
                 resList = this.getJson(apiExplorerResponse);
             }
